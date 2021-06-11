@@ -1,11 +1,9 @@
 module.exports = {
     apps: [
         {
-            name: "yarn",
-            script: "yarn",
-            args: "pre-update",
+            name: "pre-update",
+            script: "./scripts/pre-update.ts",
             cwd: __dirname,
-            interpreter: "/bin/bash",
         },
     ],
 };
