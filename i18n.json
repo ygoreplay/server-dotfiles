@@ -494,7 +494,9 @@
     "ko-kr": {
         "random_duel_enter_room_waiting": "랜덤 매칭 대기실에 입장하셨습니다. 게임을 시작하기 위해 준비 및 시작해 주세요.",
         "random_duel_enter_room_new": "랜덤 매칭 대기실에 입장하셨습니다. 상대를 기다려주세요.",
-        "random_duel_enter_room_match": "매치 모드 대기실에 입장하셨습니다.",
+        "random_duel_enter_room_single": "현재 싱글 듀얼 모드 대기실에 입장하셨습니다.",
+        "random_duel_enter_room_match": "현재 매치 모드 대기실에 입장하셨습니다.",
+        "random_duel_enter_room_tag": "현재 태그 모드 대기실에 입장하셨습니다.",
         "random_banned_part1": "당신은 다음과 같은 사유로 게임엣서 추방 되었습니다.",
         "random_banned_part2": ", 까지 다시 입장하실 수 없습니다.",
         "random_banned_part3": ".",
