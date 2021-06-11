@@ -6,3 +6,8 @@ services:
         restart: always
         ports:
             - "3000:7911"
+        volumes:
+            - ./config:/ygopro-server/config
+            - ./expansions:/ygopro-server/ygopro/expansions
+            - ./decks:/ygopro-server/decks
+            - ./replays:/ygopro-server/replays
