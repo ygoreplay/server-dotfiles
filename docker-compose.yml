@@ -4,19 +4,5 @@ services:
     mysql:
         image: mycard/ygopro-server:latest
         restart: always
-        deploy:
-            placement:
-                constraints:
-                    - node.labels.ygoreplay.pro-server == true
-            labels:
-                - traefik.enable=true
-                - traefik.docker.network=traefik-public
-                - traefik.constraint-label=traefik-public
-                - traefik.http.routers.marketing-store-app-http.rule=Host(`pro.ygoreplay.net`)
-                - traefik.http.routers.marketing-store-app-http.entrypoints=http
-                - traefik.http.routers.marketing-store-app-http.middlewares=https-redirect
-                - traefik.http.routers.marketing-store-app-https.rule=Host(`pro.ygoreplay.net`)
-                - traefik.http.routers.marketing-store-app-https.entrypoints=https
-                - traefik.http.routers.marketing-store-app-https.tls=true
-                - traefik.http.routers.marketing-store-app-https.tls.certresolver=le
-                - traefik.http.services.marketing-store-app.loadbalancer.server.port=9013
+        ports:
+            - "3000:7911"
