@@ -1,7 +1,14 @@
 const axios = require("axios");
 const NodeFormData = require("form-data");
+const fs = require("fs");
+const path = require("path");
+const countFilePath = path.join(process.cwd(), "count");
 ygopro.stoc_follow_after("REPLAY", false, async (replayData, info, client) => {
     try {
+        if (!fs.existsSync(countFilePath)) {
+            fs.writeFileSync(countFilePath, 0);
+        }
+
         const room = ROOM_all[client.rid];
         if (client.pos === 0) {
             const finishedTime = Buffer.from(moment().format("YYYY-MM-DD HH:mm:ss"));
@@ -31,6 +38,11 @@ ygopro.stoc_follow_after("REPLAY", false, async (replayData, info, client) => {
                 data: formData,
                 headers: formData.getHeaders(),
             });
+
+            const count = parseInt(fs.readFileSync(countFilePath).toString(), 10);
+            console.info(`Replay of match #${count + 1} uploaded successfully.`);
+
+            fs.writeFileSync(countFilePath, count + 1);
         }
     } catch (e) {
         log.warn("ygoreplay post failed", e.toString());
