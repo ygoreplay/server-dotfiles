@@ -19,8 +19,8 @@
         "auto_death": false
     },
     "modules": {
-        "welcome": "MyCard YGOPro Server",
-        "update": "请更新游戏版本",
+        "welcome": "YGOReplay 한국 YGOPro 서버",
+        "update": "서버와 클라이언트 버전이 다릅니다.",
         "stop": false,
         "side_timeout": false,
         "replay_delay": true,
