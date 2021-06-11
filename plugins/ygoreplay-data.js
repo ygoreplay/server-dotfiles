@@ -35,7 +35,7 @@ ygopro.stoc_follow_after("REPLAY", false, async (replayData, info, client) => {
             await axios({
                 url: "https://data.ygoreplay.com/replay/upload",
                 method: "POST",
-                data: formData,
+                data: formData.getBuffer(),
                 headers: formData.getHeaders(),
             });
 
