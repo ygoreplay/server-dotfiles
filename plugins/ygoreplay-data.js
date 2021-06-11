@@ -6,7 +6,7 @@ const countFilePath = path.join(process.cwd(), "count");
 ygopro.stoc_follow_after("REPLAY", false, async (replayData, info, client) => {
     try {
         if (!fs.existsSync(countFilePath)) {
-            fs.writeFileSync(countFilePath, 0);
+            fs.writeFileSync(countFilePath, "0");
         }
 
         const room = ROOM_all[client.rid];
@@ -35,14 +35,14 @@ ygopro.stoc_follow_after("REPLAY", false, async (replayData, info, client) => {
             await axios({
                 url: "https://data.ygoreplay.com/replay/upload",
                 method: "POST",
-                data: formData.getBuffer(),
+                data: formData,
                 headers: formData.getHeaders(),
             });
 
             const count = parseInt(fs.readFileSync(countFilePath).toString(), 10);
             console.info(`Replay of match #${count + 1} uploaded successfully.`);
 
-            fs.writeFileSync(countFilePath, count + 1);
+            fs.writeFileSync(countFilePath, `${count + 1}`);
         }
     } catch (e) {
         log.warn("ygoreplay post failed", e.toString());
