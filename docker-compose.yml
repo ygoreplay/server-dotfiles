@@ -12,3 +12,4 @@ services:
             - ./expansions:/ygopro-server/ygopro/expansions
             - ./decks:/ygopro-server/decks
             - ./replays:/ygopro-server/replays
+            - ./i18n.json:/ygopro-server/data/i18n.json
