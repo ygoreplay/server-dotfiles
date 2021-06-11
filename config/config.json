@@ -1,6 +1,6 @@
 {
   "file": "./config/config.json",
-  "port": 3000,
+  "port": 5000,
   "version": 4946,
   "alternative_versions": [],
   "hostinfo": {

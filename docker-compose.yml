@@ -5,8 +5,7 @@ services:
         container_name: pro-server
         image: mycard/ygopro-server:latest
         restart: always
-        ports:
-            - "3000:3000"
+        network_mode: host
         volumes:
             - ./config:/ygopro-server/config
             - ./expansions:/ygopro-server/ygopro/expansions
