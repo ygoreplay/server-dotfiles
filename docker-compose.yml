@@ -6,7 +6,7 @@ services:
         image: mycard/ygopro-server:latest
         restart: always
         ports:
-            - "3000:7911"
+            - "2021:7911"
         volumes:
             - ./config:/ygopro-server/config
             - ./expansions:/ygopro-server/ygopro/expansions
