@@ -16,3 +16,19 @@ services:
             - ./replays:/ygopro-server/replays
             - ./i18n.json:/ygopro-server/data/i18n.json
             - ./plugins:/ygopro-server/plugins
+
+    pro-server-pre-release:
+        container_name: pro-server-pre-release
+        image: mycard/ygopro-server:latest
+        restart: always
+        environment:
+            TZ: Asia/Seoul
+        ports:
+            - "2022:7911"
+        volumes:
+            - ./pre-expansions:/ygopro-server/ygopro/expansions
+            - ./config:/ygopro-server/config
+            - ./decks:/ygopro-server/decks
+            - ./replays:/ygopro-server/replays
+            - ./i18n.json:/ygopro-server/data/i18n.json
+            - ./plugins:/ygopro-server/plugins
