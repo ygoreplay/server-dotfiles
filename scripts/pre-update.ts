@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { JSDOM } from "jsdom";
 import * as moment from "moment";
 import * as path from "path";
-import * as schedule from "node-schedule";
+// import * as schedule from "node-schedule";
 import * as fs from "fs-extra";
 import * as util from "util";
 import fetch from "node-fetch";
@@ -14,7 +15,7 @@ const streamPipeline = util.promisify(require('stream').pipeline)
 
 const LAST_UPDATE_FILE_PATH = path.join(process.cwd(), ".pre-last-date");
 const PRE_RELEASE_DATA_DOWNLOAD_PATH = path.join(process.cwd(), ".prerelase.zip")
-const TEMP_PATH = path.join(process.cwd(), ".tmp");
+// const TEMP_PATH = path.join(process.cwd(), ".tmp");
 const PRE_EXPANSIONS_PATH = path.join(process.cwd(), "./pre-expansions");
 
 async function download(url: string, path: string) {
@@ -87,9 +88,5 @@ const check =
             console.error(`Failed to restart ${serverName} conatiner!`)
         }
     });
-
-schedule.scheduleJob("0 0 4 * * *", function () {
-    check();
-})
 
 check();
