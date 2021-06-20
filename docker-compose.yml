@@ -35,7 +35,7 @@ services:
 
     internal:
         container_name: pro-server-internal
-        image: internal/srvpro:latest
+        image: internal/srvpro
         restart: always
         environment:
             TZ: Asia/Seoul
